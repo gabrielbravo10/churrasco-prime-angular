@@ -1,0 +1,29 @@
+/* You can add global styles to this file, and also import other style files */
+@import url("https://fonts.googleapis.com/css?family=Roboto&display=swap");
+
+@import "./variables";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  line-height: 1.4;
+  background: $prime-yellow;
+}
+
+a {
+  text-decoration: none;
+  color: $prime-yellow;
+}
+
+a:hover {
+  color: $prime-white;
+}
+
+p {
+  margin: 0.55rem 0;
+}

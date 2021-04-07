@@ -1,0 +1,118 @@
+@import "src/styles/variables";
+@import "src/styles/utilities";
+
+.btn-back {
+  position: absolute;
+  z-index: 10;
+  top: 20px;
+  left: 20px;
+}
+
+#navbar {
+  display: flex;
+  position: sticky;
+  top: 0;
+  background: $prime-black;
+  justify-content: flex-end;
+  z-index: 1;
+  padding: 0.5rem;
+}
+
+#navbar ul {
+  display: flex;
+  align-items: center;
+  list-style: none;
+}
+
+#navbar ul li a {
+  padding: 0.75rem;
+  margin: 0 1rem;
+}
+
+/* Header */
+
+header {
+  display: flex;
+  background: #000;
+  flex-direction: column;
+  align-items: center;
+  height: 45vh;
+}
+
+#logo {
+  width: 250px;
+  height: 200px;
+}
+
+.search-bar {
+  width: 40%;
+  height: 35px;
+  padding: 12px 20px;
+  margin: 15px 0;
+  display: inline-block;
+  border: 2px solid #f2b727;
+  border-radius: 5px;
+}
+
+/* Footer */
+
+#footer {
+  height: 220px;
+  display: flex;
+  background-color: #000;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.about-section {
+  width: 550px;
+  height: 200px;
+}
+
+.contact-section {
+  width: 550px;
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.social-media-container {
+  display: flex;
+  margin-top: 10px;
+  width: 260px;
+  justify-content: space-between;
+}
+
+/* Main */
+
+#top-providers {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+
+.provider-box {
+  background-color: #000;
+  width: 400px;
+  height: 130px;
+  border-radius: 5px;
+  margin-bottom: 2rem;
+  display: flex;
+  padding: 15px;
+}
+
+.provider-img {
+  width: 100px;
+  height: 100px;
+}
+
+.provider-info {
+  margin: 0 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+#see-all-btn {
+  text-align: end;
+}

@@ -1,0 +1,25 @@
+<section>
+  <h2 class="m-2">Os Melhores do Churrasco Prime</h2>
+  <div id="top-providers">
+    <a href="/third-index.html" *ngFor="let provider of topProviders">
+      <div class="provider-box">
+        <img src="../assets/img/acougue154.png" alt="acougue154" class="provider-img">
+        <div class="provider-info">
+          <h3 class="text-white mb-5px">{{provider.name}}</h3>
+          <p class="text-white"><i class="fa fa-star text-primary"
+              aria-hidden="true"></i>&nbsp;&nbsp;{{provider.rating}}
+          </p>
+          <div *ngIf="provider.active; else notShow">
+            <p class="text-white"><i class="fa fa-circle text-green" aria-hidden="true"></i>&nbsp;&nbsp;Aberto
+            </p>
+          </div>
+          <ng-template #notShow>
+            <p class="text-white"><i class="fa fa-circle text-red" aria-hidden="true"></i>&nbsp;&nbsp;Fechado
+            </p>
+          </ng-template>
+        </div>
+      </div>
+    </a>
+  </div>
+  <h2 id="see-all-btn" class="m-2"><a class="text-black" routerLink="/providers">Ver Todos</a></h2>
+</section>

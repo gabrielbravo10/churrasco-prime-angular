@@ -1,0 +1,66 @@
+.text-primary {
+  color: $prime-yellow;
+}
+
+.text-white {
+  color: $prime-white;
+}
+
+.text-black {
+  color: $prime-black;
+}
+
+.text-green {
+  color: $prime-green;
+}
+
+.text-red {
+  color: $prime-red;
+}
+
+.p-1 {
+  padding: 1.5rem;
+}
+.p-2 {
+  padding: 2rem;
+}
+.p-3 {
+  padding: 3rem;
+}
+
+.py-1 {
+  padding: 1.5rem 0;
+}
+.py-2 {
+  padding: 2rem 0;
+}
+.py-3 {
+  padding: 3rem 0;
+}
+
+.m-1 {
+  margin: 1rem;
+}
+
+.m-2 {
+  margin: 2rem;
+}
+
+.mb-5px {
+  margin-bottom: 5px;
+}
+
+.btn {
+  display: inline-block;
+  background: $prime-yellow;
+  color: $prime-black;
+  padding: 0.5rem 2rem;
+  border: none;
+  border-radius: 5px;
+  width: 85px;
+  text-align: center;
+}
+
+.btn:hover {
+  color: $prime-white;
+}
