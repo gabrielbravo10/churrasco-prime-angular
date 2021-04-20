@@ -1,5 +1,5 @@
 export class IProvider {
-  id?: number;
+  idProvider?: number;
   name: string;
   imageUrl: string;
   active: boolean;
