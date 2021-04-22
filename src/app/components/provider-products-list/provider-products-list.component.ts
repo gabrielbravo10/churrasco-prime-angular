@@ -31,7 +31,7 @@ export class ProviderProductsListComponent implements OnInit {
   listProducts(categories?: string, filter?: string) {
     this.productService.findProductsByProviderAndCategory(this.providerId, categories, filter).subscribe((response: IPaginated<IProduct>) => {
       this.products = response.content;
-      this.methodToBeNamed();
+      this.productsListToCategoryProductsList();
     },
       (error) => {
         console.log(error);
@@ -52,7 +52,7 @@ export class ProviderProductsListComponent implements OnInit {
     this.listProducts('', keyword);
   }
 
-  methodToBeNamed() {
+  productsListToCategoryProductsList() {
 
     this.products.map(product => {
 
