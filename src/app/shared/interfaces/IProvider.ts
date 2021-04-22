@@ -1,4 +1,4 @@
-export class IProvider {
+export interface IProvider {
   idProvider?: number;
   name: string;
   imageUrl: string;

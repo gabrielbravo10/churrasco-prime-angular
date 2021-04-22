@@ -9,6 +9,9 @@ import { TopProvidersComponent } from './components/top-providers/top-providers.
 import { ProvidersListComponent } from './components/providers-list/providers-list.component';
 import { SearchComponent } from './components/search/search.component';
 import { ProviderProductsListComponent } from './components/provider-products-list/provider-products-list.component';
+import { LoginComponent } from './components/login/login.component';
+import { HeaderComponent } from './components/header/header.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +19,10 @@ import { ProviderProductsListComponent } from './components/provider-products-li
     TopProvidersComponent,
     ProvidersListComponent,
     SearchComponent,
-    ProviderProductsListComponent
+    ProviderProductsListComponent,
+    LoginComponent,
+    HeaderComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,

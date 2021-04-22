@@ -1,0 +1,71 @@
+@import "src/styles/variables";
+@import "src/styles/utilities";
+
+.espaco {
+  padding: 0 0 24px;
+}
+
+#simple-border {
+  border-bottom: 2px solid $prime-black;
+}
+
+#yellow-main {
+  background-color: $prime-yellow;
+}
+
+.div-black {
+  background-color: $prime-black;
+}
+
+.color-black {
+  color: $prime-black;
+}
+
+.cor-yellow {
+  color: $prime-yellow;
+}
+
+.cor-white {
+  color: $prime-white;
+}
+
+// #background {
+//   background-image: url(../assets/Header-carne.png);
+//   height: 100%;
+//   background-position: center;
+//   background-repeat: no-repeat;
+//   background-size: cover;
+// }
+
+.lower-div {
+  margin-top: 100px;
+}
+
+.circle-aberto {
+  color: $prime-green;
+}
+
+.circle-fechado {
+  color: $prime-red;
+}
+
+.provider-box {
+  background-color: #000;
+  width: 400px;
+  height: 130px;
+  border-radius: 5px;
+  margin-bottom: 2rem;
+  display: flex;
+  padding: 15px;
+}
+
+.provider-img {
+  width: 100px;
+  height: 100px;
+}
+
+.provider-info {
+  margin: 0 20px;
+  display: flex;
+  flex-direction: column;
+}

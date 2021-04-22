@@ -1,0 +1,41 @@
+footer {
+  padding: 20px;
+  background-color: #000;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.social-media-container {
+  display: flex;
+  margin-top: 20px;
+  width: 330px;
+  justify-content: space-between;
+}
+
+@media only screen and (max-width: 768px) {
+  body {
+    background-color: lightblue;
+  }
+
+  .social-media-container {
+    width: 270px;
+  }
+}
+
+@media only screen and (max-width: 425px) {
+  .social-media-container {
+    width: 270px;
+    text-align: center;
+    margin: auto;
+  }
+
+  .container {
+    text-align: center;
+  }
+
+  #about {
+    display: none;
+  }
+}
