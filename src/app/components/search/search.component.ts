@@ -18,7 +18,6 @@ export class SearchComponent implements OnInit, OnDestroy {
 
   ngOnInit() {
     this.subscription = this.subject.pipe(debounceTime(500)).subscribe((value) => {
-      console.log("testing", value)
       this.router.navigateByUrl(`/search/${value}`);
     })
   }

@@ -1,3 +1,5 @@
+import { ProviderService } from 'src/app/shared/services/provider.service';
+import { IProvider } from 'src/app/shared/interfaces/IProvider';
 import { ICategoryProducts } from './../../shared/interfaces/ICategoryProducts';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
@@ -18,13 +20,16 @@ export class ProviderProductsListComponent implements OnInit {
   providerId: number;
   categories: ICategoryProducts[] = [];
 
+  provider: IProvider;
+
   constructor(private route: ActivatedRoute, private router: Router,
-    private productService: ProductService) { }
+    private productService: ProductService, private providerService: ProviderService) { }
 
   ngOnInit(): void {
     this.route.paramMap.subscribe(() => {
       this.providerId = +this.route.snapshot.paramMap.get('providerId');
       this.listProducts();
+      this.getProvider(this.providerId);
     });
   }
 
@@ -36,6 +41,12 @@ export class ProviderProductsListComponent implements OnInit {
       (error) => {
         console.log(error);
       })
+  }
+
+  getProvider(providerId: number) {
+    this.providerService.findById(providerId).subscribe((response) => {
+      this.provider = response;
+    })
   }
 
   onCategoryChange(category: string) {

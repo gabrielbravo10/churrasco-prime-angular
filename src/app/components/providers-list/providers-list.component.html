@@ -2,7 +2,7 @@
 
 <section>
   <h2 class="m-2">Parceiros do Churrasco Prime</h2>
-  <div id="top-providers">
+  <div id="providers">
     <a *ngFor="let provider of providers" (click)="navigateToProviderPage(provider.idProvider)">
       <div class="row rounded border-dark m-5" style="background-color: #000;">
         <div class="col">
@@ -26,6 +26,8 @@
     </a>
   </div>
 </section>
+
+<app-footer></app-footer>
 
 
 <!-- <app-header></app-header>

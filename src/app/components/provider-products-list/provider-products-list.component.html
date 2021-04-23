@@ -1,3 +1,53 @@
+<header id="background">
+  <div class="espaco">
+    <div class="container espaco">
+      <div class="d-flex flex-wrap justify-content-center py-3 mb-4 ">
+        <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
+          <img src="../assets/img/logo.png" alt="" width="100" height="92">
+        </a>
+        <ul class="nav nav-pills">
+          <li class="nav-item"><a href="#" class="btn btn-outline-warning">Entrar</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="container">
+      <div class="me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center text-white overflow-hidden">
+        <div class="container py-4 div-black rounded-3">
+          <div class="row">
+            <div class="col">
+              <img src="../assets/img/acougue154.png" class="img-thumbnail" alt="logo provider">
+            </div>
+            <!-- <h2>{{provider.name}}</h2> -->
+            <div class="col lower-div cor-yellow">
+              <h3>Tempo de espera</h3>
+              <span class="cor-white">35Min</span>
+            </div>
+            <div class="col lower-div cor-yellow">
+              <h3>Taxa de entrega</h3>
+              <span class="cor-white">25$ reais</span>
+            </div>
+            <div class="col lower-div cor-yellow">
+              <h3>Situação</h3>
+              <div>
+                <span class="cor-white">Aberto </span>
+                <svg width="16" height="16" fill="currentColor" class="circle-fechado" viewBox="0 0 16 16">
+                  <circle cx="8" cy="8" r="8" />
+                </svg>
+              </div>
+              <div>
+                <span class="cor-white">Fechado </span>
+                <svg width="16" height="16" fill="currentColor" class="circle-aberto" viewBox="0 0 16 16">
+                  <circle cx="8" cy="8" r="8" />
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
 <main id="yellow-main">
   <div class="container" id="simple-border">
     <div class="row g-3">
@@ -7,11 +57,6 @@
           <option value="0" selected>Todas as categorias</option>
           <option value="1">Carnes</option>
           <option value="2">Second cat</option>
-          <!-- <option value="1">Churrasco-kits</option>
-          <option value="2">Churrasco-Adicionais</option>
-          <option value="3">Temperos</option>
-          <option value="4">Drinks-Kits</option>
-          <option value="5">Drinks-Adicionais</option> -->
         </select>
       </div>
       <div class="col"></div>
@@ -50,3 +95,6 @@
   </div>
 
 </main>
+
+
+<app-footer></app-footer>

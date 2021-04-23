@@ -3,10 +3,11 @@
 
 /* Main */
 
-#top-providers {
+#providers {
   display: flex;
   justify-content: space-evenly;
   flex-wrap: wrap;
+  min-height: 50vh;
 }
 
 .provider-box {
