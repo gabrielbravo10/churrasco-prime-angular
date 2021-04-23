@@ -4,19 +4,21 @@
   <h2 class="m-2">Parceiros do Churrasco Prime</h2>
   <div id="top-providers">
     <a *ngFor="let provider of providers" (click)="navigateToProviderPage(provider.idProvider)">
-      <div class="provider-box">
-        <img src="../assets/img/acougue154.png" alt="acougue154" class="provider-img">
-        <div class="provider-info">
-          <h3 class="text-white mb-5px">{{provider.name}}</h3>
-          <p class="text-white"><i class="fa fa-star text-primary"
+      <div class="row rounded border-dark m-5" style="background-color: #000;">
+        <div class="col">
+          <img src="../assets/img/acougue154.png" alt="acougue154" class="mt-3" width="150px">
+        </div>
+        <div class="col mt-5">
+          <h3 class="text-white pe-5">{{provider.name}}</h3>
+          <p class="text-white"><i class="fa fa-star text-warning"
               aria-hidden="true"></i>&nbsp;&nbsp;{{provider.rating}}
           </p>
-          <div *ngIf="provider.active; else notShow">
-            <p class="text-white"><i class="fa fa-circle text-green" aria-hidden="true"></i>&nbsp;&nbsp;Aberto
+          <div *ngIf="provider.active; else notShow" class="">
+            <p class="text-white"><i class="fa fa-circle text-success" aria-hidden="true"></i>&nbsp;&nbsp;Aberto
             </p>
           </div>
           <ng-template #notShow>
-            <p class="text-white"><i class="fa fa-circle text-red" aria-hidden="true"></i>&nbsp;&nbsp;Fechado
+            <p class="text-white"><i class="fa fa-circle text-danger" aria-hidden="true"></i>&nbsp;&nbsp;Fechado
             </p>
           </ng-template>
         </div>
@@ -24,3 +26,32 @@
     </a>
   </div>
 </section>
+
+
+<!-- <app-header></app-header>
+Codigo original
+
+<section>
+  <h2 class="m-2">Parceiros do Churrasco Prime</h2>
+  <div id="top-providers">
+    <a *ngFor="let provider of providers" (click)="navigateToProviderPage(provider.idProvider)">
+      <div class="provider-box">
+        <img src="../assets/img/acougue154.png" alt="acougue154" class="provider-img">
+        <div class="provider-info">
+          <h3 class="text-white mb-5px">{{provider.name}}</h3>
+          <p class="text-white"><i class="fa fa-star text-warning"
+              aria-hidden="true"></i>&nbsp;&nbsp;{{provider.rating}}
+          </p>
+          <div *ngIf="provider.active; else notShow">
+            <p class="text-white"><i class="fa fa-circle text-success" aria-hidden="true"></i>&nbsp;&nbsp;Aberto
+            </p>
+          </div>
+          <ng-template #notShow>
+            <p class="text-white"><i class="fa fa-circle text-danger" aria-hidden="true"></i>&nbsp;&nbsp;Fechado
+            </p>
+          </ng-template>
+        </div>
+      </div>
+    </a>
+  </div>
+</section> -->
