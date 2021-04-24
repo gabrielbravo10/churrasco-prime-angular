@@ -6,7 +6,7 @@
           <img src="../assets/img/logo.png" alt="" width="100" height="92">
         </a>
         <ul class="nav nav-pills">
-          <li class="nav-item"><a href="#" class="btn btn-outline-warning">Entrar</a></li>
+          <li class="nav-item"><a href="#" class="btn btn-warning">Entrar</a></li>
         </ul>
       </div>
     </div>
@@ -14,6 +14,9 @@
       <div class="me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center text-white overflow-hidden">
         <div class="container py-4 div-black rounded-3">
           <div class="row">
+            <div>
+              <h3>{{provider.name}}</h3>
+            </div>
             <div class="col">
               <img src="../assets/img/acougue154.png" class="img-thumbnail" alt="logo provider">
             </div>
@@ -23,22 +26,21 @@
               <span class="cor-white">35Min</span>
             </div>
             <div class="col lower-div cor-yellow">
-              <h3>Taxa de entrega</h3>
-              <span class="cor-white">25$ reais</span>
+              <h3>Nivel de estrelas</h3>
+              <span class="cor-white"><i class="fa fa-star text-warning"
+                  aria-hidden="true"></i>&nbsp;&nbsp;{{provider.rating}}</span>
             </div>
             <div class="col lower-div cor-yellow">
               <h3>Situação</h3>
               <div>
-                <span class="cor-white">Aberto </span>
-                <svg width="16" height="16" fill="currentColor" class="circle-fechado" viewBox="0 0 16 16">
-                  <circle cx="8" cy="8" r="8" />
-                </svg>
-              </div>
-              <div>
-                <span class="cor-white">Fechado </span>
-                <svg width="16" height="16" fill="currentColor" class="circle-aberto" viewBox="0 0 16 16">
-                  <circle cx="8" cy="8" r="8" />
-                </svg>
+                <div *ngIf="provider.active; else notShow">
+                  <p class="text-white"><i class="fa fa-circle text-success" aria-hidden="true"></i>&nbsp;&nbsp;Aberto
+                  </p>
+                </div>
+                <ng-template #notShow>
+                  <p class="text-white"><i class="fa fa-circle text-danger" aria-hidden="true"></i>&nbsp;&nbsp;Fechado
+                  </p>
+                </ng-template>
               </div>
             </div>
           </div>

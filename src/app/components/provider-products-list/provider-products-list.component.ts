@@ -21,6 +21,7 @@ export class ProviderProductsListComponent implements OnInit {
   categories: ICategoryProducts[] = [];
 
   provider: IProvider;
+  providers: IProvider[] = [];
 
   constructor(private route: ActivatedRoute, private router: Router,
     private productService: ProductService, private providerService: ProviderService) { }
@@ -31,6 +32,35 @@ export class ProviderProductsListComponent implements OnInit {
       this.listProducts();
       this.getProvider(this.providerId);
     });
+  }
+
+  listProviders() {
+    this.searchMode = this.route.snapshot.paramMap.has('keyword');
+    if (this.searchMode) {
+      this.handleSearchProviders();
+    }
+    else {
+      this.handleListProviders();
+    }
+  }
+
+  handleSearchProviders() {
+    const theKeyword: string = this.route.snapshot.paramMap.get('keyword');
+    this.providerService.findAll(theKeyword).subscribe((response: IPaginated<IProvider>) => {
+      this.providers = response.content;
+    },
+      (error) => {
+        console.log(error);
+      })
+  }
+
+  handleListProviders() {
+    this.providerService.findAll().subscribe((response: IPaginated<IProvider>) => {
+      this.providers = response.content;
+    },
+      (error) => {
+        console.log(error);
+      })
   }
 
   listProducts(categories?: string, filter?: string) {
