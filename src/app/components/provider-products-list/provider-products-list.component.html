@@ -54,12 +54,13 @@
   <div class="container" id="simple-border">
     <div class="row g-3">
       <div class="col">
-        <select class="form-select" aria-label="Default select example"
-          (change)="onCategoryChange($event.target.value)">
-          <option value="0" selected>Todas as categorias</option>
-          <option value="1">Carnes</option>
-          <option value="2">Second cat</option>
-        </select>
+        <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
+          <div class="btn-group mr-2" role="group" aria-label="First group">
+            <button type="button" class="btn btn-danger">Carnes</button>
+            <button type="button" class="btn btn-info">Drinks</button>
+            <button type="button" class="btn btn-success">Temperos</button>
+          </div>
+        </div>
       </div>
       <div class="col"></div>
       <div class="col">
