@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { IProvider } from 'src/app/shared/interfaces/IProvider';
 import { ProviderService } from '../../shared/services/provider.service';
 
@@ -13,7 +13,8 @@ export class TopProvidersComponent implements OnInit {
   topProviders: IProvider[] = [];
 
   constructor(private providerService: ProviderService,
-    private route: ActivatedRoute) { }
+    private route: ActivatedRoute,
+    private router: Router) { }
 
   ngOnInit() {
     this.route.paramMap.subscribe(() => {
@@ -25,5 +26,9 @@ export class TopProvidersComponent implements OnInit {
     this.providerService.findTop3().subscribe((response) => {
       this.topProviders = response;
     })
+  }
+
+  navigateToProviderPage(providerId: string) {
+    this.router.navigateByUrl(`/provider-products/${providerId}`);
   }
 }
