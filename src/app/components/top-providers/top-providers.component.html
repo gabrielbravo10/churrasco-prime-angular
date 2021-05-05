@@ -1,6 +1,7 @@
 <app-header></app-header>
 
-<section>
+<!-- Criação com Bootstrap -->
+<!-- <section>
   <h2 class="m-2">Os Melhores do Churrasco Prime</h2>
   <div class="row row-cols-1 row-cols-md-3 g-4">
     <div *ngFor="let provider of topProviders">
@@ -28,43 +29,45 @@
     </div>
   </div>
   <h2 id="see-all-btn" class="m-2"><a class="text-dark" routerLink="/providers">Ver Todos</a></h2>
-</section>
+</section> -->
 
-
-<!-- <section>
-  <h2 class="m-2 mb-5">Os Melhores do Churrasco Prime</h2>
-  <div class="container">
-    <div class="row row-cols-1 row-cols-md-3 g-4">
-      <div class="col" *ngFor="let provider of topProviders" class="m-0 p-0">
-        <a (click)="navigateToProviderPage(provider.idProvider)">
-          <div class="card m-2 p-2" style="background-color: #000;">
-            <img src="../assets/img/acougue154.png" class="img-fluid" alt="...">
-            <div class="card-body">
-              <h5 class="card-title text-white">{{provider.name}}</h5>
-              <p class="text-white"><i class="fa fa-star text-warning"
-                  aria-hidden="true"></i>&nbsp;&nbsp;{{provider.rating}}
-              </p>
-              <div *ngIf="provider.active; else notShow">
-                <p class="text-white"><i class="fa fa-circle text-success" aria-hidden="true"></i>&nbsp;&nbsp;Aberto
+<!-- Card Bootstrap -->
+<main style="background-color: #f2b727;">
+  <section>
+    <h2 class="m-2 mb-5">Os Melhores do Churrasco Prime</h2>
+    <div class="container">
+      <div class="row row-cols-1 row-cols-md-3 g-4">
+        <div class="col" *ngFor="let provider of topProviders" class="m-0 p-0">
+          <a (click)="navigateToProviderPage(provider.idProvider)">
+            <div class="card m-2 p-2" style="background-color: #000;">
+              <img src="../assets/img/acougue154.png" class="img-fluid" alt="...">
+              <div class="card-body">
+                <h5 class="card-title text-white">{{provider.name}}</h5>
+                <p class="text-white"><i class="fa fa-star text-warning"
+                    aria-hidden="true"></i>&nbsp;&nbsp;{{provider.rating}}
                 </p>
+                <div *ngIf="provider.active; else notShow">
+                  <p class="text-white"><i class="fa fa-circle text-success" aria-hidden="true"></i>&nbsp;&nbsp;Aberto
+                  </p>
+                </div>
+                <ng-template #notShow>
+                  <p class="text-white"><i class="fa fa-circle text-danger" aria-hidden="true"></i>&nbsp;&nbsp;Fechado
+                  </p>
+                </ng-template>
               </div>
-              <ng-template #notShow>
-                <p class="text-white"><i class="fa fa-circle text-danger" aria-hidden="true"></i>&nbsp;&nbsp;Fechado
-                </p>
-              </ng-template>
             </div>
-          </div>
-        </a>
+          </a>
+        </div>
       </div>
     </div>
-  </div>
-  <h2 id="see-all-btn" class="m-2"><a class="text-dark m-2" routerLink="/providers">Ver Todos</a></h2>
-</section> -->
+    <h2 id="see-all-btn" class="m-2"><a class="text-dark m-2" routerLink="/providers">Ver Todos</a></h2>
+  </section>
+</main>
 
 <app-footer></app-footer>
 
+<!-- Original -->
 <!-- <app-header></app-header>
-
 <section>
   <h2 class="m-2">Os Melhores do Churrasco Prime</h2>
   <div id="top-providers">

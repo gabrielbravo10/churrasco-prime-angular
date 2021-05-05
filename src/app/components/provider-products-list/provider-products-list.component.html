@@ -50,7 +50,7 @@
   </div>
 </header>
 
-<main id="yellow-main">
+<main id="yellow-main" class="pb-5">
   <div class="container" id="simple-border">
     <div class="row g-3">
       <div class="col">
@@ -83,7 +83,6 @@
   <br>
   <div class="container" *ngFor="let category of categories">
     <h2>{{category.name}}</h2>
-
     <a *ngFor="let product of category.products">
       <div class="provider-box">
         <img src="../assets/img/acougue154.png" alt="acougue154" class="provider-img">
@@ -94,9 +93,7 @@
         </div>
       </div>
     </a>
-
   </div>
-
 </main>
 
 
