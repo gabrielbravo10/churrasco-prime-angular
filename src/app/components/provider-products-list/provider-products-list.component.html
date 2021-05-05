@@ -1,6 +1,6 @@
 <header id="background">
-  <div class="espaco">
-    <div class="container espaco">
+  <div class="">
+    <div class="container ">
       <div class="d-flex flex-wrap justify-content-center py-3 mb-4 ">
         <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
           <img src="../assets/img/logo.png" alt="" width="100" height="92">
@@ -11,7 +11,7 @@
       </div>
     </div>
     <div class="container">
-      <div class="me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center text-white overflow-hidden">
+      <div class="me-md-3 px-3 px-md-5 text-center text-white overflow-hidden">
         <div class="container py-4 div-black rounded-3">
           <div class="row">
             <div>
@@ -20,7 +20,6 @@
             <div class="col">
               <img src="../assets/img/acougue154.png" class="img-thumbnail" alt="logo provider">
             </div>
-            <!-- <h2>{{provider.name}}</h2> -->
             <div class="col lower-div cor-yellow">
               <h3>Tempo de espera</h3>
               <span class="cor-white">35Min</span>
@@ -80,8 +79,9 @@
       </div>
     </div>
   </div>
-  <br>
-  <div class="container" *ngFor="let category of categories">
+
+  <!-- Modelo antigo -->
+  <!-- <div class="container pt-3" *ngFor="let category of categories">
     <h2>{{category.name}}</h2>
     <a *ngFor="let product of category.products">
       <div class="provider-box">
@@ -93,7 +93,36 @@
         </div>
       </div>
     </a>
-  </div>
+  </div> -->
+
+  <!-- Nova retangulo  -->
+  <section class="container">
+    <div  *ngFor="let category of categories" id="simple-border">
+      <div class="pt-3">
+        <h2>{{category.name}}</h2>
+      </div>
+      <div class="row row-cols-1 row-cols-md-3 g-4">
+        <a *ngFor="let product of category.products">
+          <div class="card mb-3 div-black" style="max-width: 440px;">
+            <div class="row g-0">
+              <div class="col-md-4">
+                <img src="../assets/img/acougue154.png" alt="" class="img-thumbnail">
+              </div>
+              <div class="col-md-8">
+                <div class="card-body">
+                  <h5 class="card-title text-white">{{product.name}}</h5>
+                  <p class="card-text text-white">{{product.description}}</p>
+                  <p class="card-text text-white">{{product.categories[0].name}}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </a>
+      </div>
+
+    </div>
+  </section>
+
 </main>
 
 
