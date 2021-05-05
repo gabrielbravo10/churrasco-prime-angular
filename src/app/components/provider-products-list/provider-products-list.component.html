@@ -53,12 +53,10 @@
   <div class="container" id="simple-border">
     <div class="row g-3">
       <div class="col">
-        <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
-          <div class="btn-group mr-2" role="group" aria-label="First group">
-            <button type="button" class="btn btn-danger">Carnes</button>
-            <button type="button" class="btn btn-info">Drinks</button>
-            <button type="button" class="btn btn-success">Temperos</button>
-          </div>
+        <div>
+          <button type="button" class="btn btn-danger me-3">Carnes</button>
+          <button type="button" class="btn btn-info me-3">Drinks</button>
+          <button type="button" class="btn btn-success me-3">Temperos</button>
         </div>
       </div>
       <div class="col"></div>
@@ -97,7 +95,7 @@
 
   <!-- Nova retangulo  -->
   <section class="container">
-    <div  *ngFor="let category of categories" id="simple-border">
+    <div *ngFor="let category of categories" id="simple-border">
       <div class="pt-3">
         <h2>{{category.name}}</h2>
       </div>
