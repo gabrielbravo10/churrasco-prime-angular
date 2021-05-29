@@ -1,42 +1,10 @@
 <app-header></app-header>
 
-<!-- Criação com Bootstrap -->
-<!-- <section>
-  <h2 class="m-2">Os Melhores do Churrasco Prime</h2>
-  <div class="row row-cols-1 row-cols-md-3 g-4">
-    <div *ngFor="let provider of topProviders">
-      <a (click)="navigateToProviderPage(provider.idProvider)" class="m-0 p-0">
-        <div class="row border border-dark m-5" style="background-color: #000;">
-          <div class="col">
-            <img src="../assets/img/acougue154.png" alt="acougue154" class="mb-3 mt-3" width="150px">
-          </div>
-          <div class="col mt-3">
-            <h4 class="text-white pe-5">{{provider.name}}</h4>
-            <p class="text-white"><i class="fa fa-star text-warning"
-                aria-hidden="true"></i>&nbsp;&nbsp;{{provider.rating}}
-            </p>
-            <div *ngIf="provider.active; else notShow">
-              <p class="text-white"><i class="fa fa-circle text-success" aria-hidden="true"></i>&nbsp;&nbsp;Aberto
-              </p>
-            </div>
-            <ng-template #notShow>
-              <p class="text-white"><i class="fa fa-circle text-danger" aria-hidden="true"></i>&nbsp;&nbsp;Fechado
-              </p>
-            </ng-template>
-          </div>
-        </div>
-      </a>
-    </div>
-  </div>
-  <h2 id="see-all-btn" class="m-2"><a class="text-dark" routerLink="/providers">Ver Todos</a></h2>
-</section> -->
-
-<!-- Card Bootstrap-->
 <main style="background-color: #f2b727;" class="p-5 pt-3 mb-2">
   <h2 class="pb-2">Os Melhores do Churrasco Prime</h2>
   <section class="container">
     <div class="row row-cols-1 row-cols-md-3 g-4">
-      <a *ngFor="let provider of topProviders" (click)="navigateToProviderPage(provider.idProvider)">
+      <a *ngFor="let provider of topProviders" (click)="navigateToProviderPage(provider.idProvider)" class="pointer">
         <div class="card mb-3 div-black" style="max-width: 440px; background-color: #000;">
           <div class="row g-0">
             <div class="col-md-4">
@@ -68,31 +36,3 @@
 </main>
 
 <app-footer></app-footer>
-
-<!-- Original -->
-<!-- <app-header></app-header>
-<section>
-  <h2 class="m-2">Os Melhores do Churrasco Prime</h2>
-  <div id="top-providers">
-    <a href="/third-index.html" *ngFor="let provider of topProviders">
-      <div class="provider-box">
-        <img src="../assets/img/acougue154.png" alt="acougue154" class="provider-img">
-        <div class="provider-info">
-          <h3 class="text-white mb-2">{{provider.name}}</h3>
-          <p class="text-white"><i class="fa fa-star text-warning"
-              aria-hidden="true"></i>&nbsp;&nbsp;{{provider.rating}}
-          </p>
-          <div *ngIf="provider.active; else notShow">
-            <p class="text-white"><i class="fa fa-circle text-success" aria-hidden="true"></i>&nbsp;&nbsp;Aberto
-            </p>
-          </div>
-          <ng-template #notShow>
-            <p class="text-white"><i class="fa fa-circle text-danger" aria-hidden="true"></i>&nbsp;&nbsp;Fechado
-            </p>
-          </ng-template>
-        </div>
-      </div>
-    </a>
-  </div>
-  <h2 id="see-all-btn" class="m-2"><a class="text-dark" routerLink="/providers">Ver Todos</a></h2>
-</section> -->

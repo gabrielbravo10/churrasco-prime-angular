@@ -7,6 +7,8 @@ import { IPaginated } from 'src/app/shared/interfaces/IPaginated';
 import { IProduct } from 'src/app/shared/interfaces/IProduct';
 
 import { ProductService } from 'src/app/shared/services/product.service';
+import { CategoryService } from 'src/app/shared/services/category.service';
+import { ICategory } from 'src/app/shared/interfaces/ICategory';
 
 @Component({
   selector: 'app-provider-products-list',
@@ -22,15 +24,18 @@ export class ProviderProductsListComponent implements OnInit {
 
   provider: IProvider;
   providers: IProvider[] = [];
+  categoriesTypes: ICategory[] = [];
 
   constructor(private route: ActivatedRoute, private router: Router,
-    private productService: ProductService, private providerService: ProviderService) { }
+    private productService: ProductService, private providerService: ProviderService,
+    private categoryService: CategoryService) { }
 
   ngOnInit(): void {
     this.route.paramMap.subscribe(() => {
       this.providerId = +this.route.snapshot.paramMap.get('providerId');
       this.listProducts();
       this.getProvider(this.providerId);
+      this.getCategories();
     });
   }
 
@@ -109,4 +114,21 @@ export class ProviderProductsListComponent implements OnInit {
     })
   }
 
+  getCategories(){
+    this.categoryService.findAll().subscribe((response: IPaginated<ICategory>) => {
+      this.categoriesTypes = response.content;
+    },
+    (error) => {
+      console.log(error);
+    })
+  }
+
+  scroll(id: any) {
+    console.log(id);
+    document.getElementById(id).scrollIntoView();
+  }
+
+  scrollToTop() {
+    window.scrollTo(0, 0);
+  }
 }
