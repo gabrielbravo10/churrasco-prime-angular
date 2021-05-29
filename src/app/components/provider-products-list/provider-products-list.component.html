@@ -18,7 +18,7 @@
               <h3>{{provider?.name}}</h3>
             </div>
             <div class="col">
-              <img src="{{'http://localhost:8080/churrascoprime' + provider?.imageUrl}}" class="img-thumbnail" alt="logo provider">
+              <img src="{{'http://localhost:8080/churrascoprime/providers/image/' + provider?.name}}" class="img-thumbnail" alt="logo provider">
             </div>
             <div class="col lower-div cor-yellow">
               <h3>Tempo de espera</h3>
@@ -72,7 +72,7 @@
           <div class="card mb-3 div-black" style="max-width: 440px;">
             <div class="row g-0">
               <div class="col-md-4">
-                <img src="{{'http://localhost:8080/churrascoprime' + product?.imageUrl}}" alt="" class="img-thumbnail">
+                <img src="{{'http://localhost:8080/churrascoprime/products/image/' + product?.name}}" alt="" class="img-thumbnail">
               </div>
               <div class="col-md-8">
                 <div class="card-body">
