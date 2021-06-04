@@ -1,0 +1,18 @@
+@import "src/styles/variables";
+@import "src/styles/utilities";
+
+.white {
+    color: $prime-white;
+}
+
+.fundo {
+    background-color: $prime-yellow;
+}
+
+.text-yellow {
+    color: $prime-yellow;
+}
+
+.title-border {
+    border-bottom: 5px solid $prime-black ;
+}
