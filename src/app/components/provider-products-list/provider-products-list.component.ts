@@ -8,7 +8,9 @@ import { IProduct } from 'src/app/shared/interfaces/IProduct';
 
 import { ProductService } from 'src/app/shared/services/product.service';
 import { CategoryService } from 'src/app/shared/services/category.service';
+import { CartService } from 'src/app/shared/services/cart.service';
 import { ICategory } from 'src/app/shared/interfaces/ICategory';
+import { ICartItem } from 'src/app/shared/interfaces/ICartItem';
 
 @Component({
   selector: 'app-provider-products-list',
@@ -28,7 +30,7 @@ export class ProviderProductsListComponent implements OnInit {
 
   constructor(private route: ActivatedRoute, private router: Router,
     private productService: ProductService, private providerService: ProviderService,
-    private categoryService: CategoryService) { }
+    private categoryService: CategoryService, private cartService: CartService ) { }
 
   ngOnInit(): void {
     this.route.paramMap.subscribe(() => {
@@ -121,6 +123,12 @@ export class ProviderProductsListComponent implements OnInit {
     (error) => {
       console.log(error);
     })
+  }
+
+  addToCart(theProduct: IProduct) {
+    console.log(`Adding to cart: ${theProduct.name}, ${theProduct.description}`);
+    const theCartItem = new ICartItem(theProduct);
+    this.cartService.addToCart(theCartItem);
   }
 
   scroll(id: any) {

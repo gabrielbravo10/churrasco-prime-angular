@@ -1,15 +1,6 @@
 <header id="background">
   <div class="">
-    <div class="container ">
-      <div class="d-flex flex-wrap justify-content-center py-3 mb-4 ">
-        <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
-          <img src="../assets/img/logo.png" alt="" width="100" height="92">
-        </a>
-        <ul class="nav nav-pills">
-          <li class="nav-item"><a href="/login" class="btn btn-warning ms-5">Entrar</a></li>
-        </ul>
-      </div>
-    </div>
+    <app-small-header></app-small-header>
     <div class="container">
       <div class="me-md-3 px-3 px-md-5 text-center text-white overflow-hidden">
 
@@ -50,41 +41,6 @@
             </div>
           </div>
         </div>
-
-        <!-- Antigo card -->
-        <!-- <div class="container py-4 div-black rounded-3">
-          <div class="row">
-            <div>
-              
-              <h1>{{provider?.name}}</h1>
-            </div>
-            <div class="col-3">
-              <img src="{{'http://localhost:8080/churrascoprime/providers/image/' + provider?.name}}" class="img-thumbnail" alt="logo provider">
-            </div>
-            <div class="col-3 lower-div cor-yellow">
-              <h3>Tempo de espera</h3>
-              <span class="cor-white">35Min</span>
-            </div>
-            <div class="col-3 lower-div cor-yellow">
-              <h3>Nivel de estrelas</h3>
-              <span class="cor-white"><i class="fa fa-star text-warning"
-                  aria-hidden="true"></i>&nbsp;&nbsp;{{provider?.rating}}</span>
-            </div>
-            <div class="col-3 lower-div cor-yellow">
-              <h3>Situação</h3>
-              <div>
-                <div *ngIf="provider?.active; else notShow">
-                  <p class="text-white"><i class="fa fa-circle text-success" aria-hidden="true"></i>&nbsp;&nbsp;Aberto
-                  </p>
-                </div>
-                <ng-template #notShow>
-                  <p class="text-white"><i class="fa fa-circle text-danger" aria-hidden="true"></i>&nbsp;&nbsp;Fechado
-                  </p>
-                </ng-template>
-              </div>
-            </div>
-          </div>
-        </div> -->
       </div>
     </div>
   </div>
@@ -120,7 +76,10 @@
                 <div class="card-body">
                   <h5 class="card-title text-white">{{product.name}}</h5>
                   <p class="card-text text-white">{{product.description}}</p>
-                  <p class="card-text text-white">{{product.unitPrice}}</p>
+                  <p class="card-text text-white text-end">{{product.unitPrice}}</p>
+                  <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                    <button (click)="addToCart(product)" type="button" class="btn btn-light">Adicionar</button>
+                  </div>
                 </div>
               </div>
             </div>

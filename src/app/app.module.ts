@@ -13,6 +13,10 @@ import { LoginComponent } from './components/login/login.component';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { AboutUsComponent } from './components/about-us/about-us.component';
+import { RegisterComponent } from './components/register/register.component';
+import { ShoppingCartComponent } from './components/shopping-cart/shopping-cart.component';
+import { CartStatusComponent } from './components/cart-status/cart-status.component';
+import { SmallHeaderComponent } from './components/small-header/small-header.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +28,11 @@ import { AboutUsComponent } from './components/about-us/about-us.component';
     LoginComponent,
     HeaderComponent,
     FooterComponent,
-    AboutUsComponent
+    AboutUsComponent,
+    RegisterComponent,
+    ShoppingCartComponent,
+    CartStatusComponent,
+    SmallHeaderComponent,
   ],
   imports: [
     BrowserModule,
