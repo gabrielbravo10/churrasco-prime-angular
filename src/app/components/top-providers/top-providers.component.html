@@ -7,10 +7,10 @@
       <a *ngFor="let provider of topProviders" (click)="navigateToProviderPage(provider.idProvider)" class="pointer">
         <div class="card mb-3 div-black" style="max-width: 440px; background-color: #000;">
           <div class="row g-0">
-            <div class="col-md-4">
+            <div class="col-md-6">
               <img src="{{'http://localhost:8080/churrascoprime/providers/image/' + provider?.name}}" alt="" class="img-thumbnail">
             </div>
-            <div class="col-md-8">
+            <div class="col-md-6">
               <div class="card-body">
                 <h5 class="card-title text-white">{{provider.name}}</h5>
                 <p class="text-white"><i class="fa fa-star text-warning"

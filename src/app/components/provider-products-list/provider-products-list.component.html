@@ -6,30 +6,71 @@
           <img src="../assets/img/logo.png" alt="" width="100" height="92">
         </a>
         <ul class="nav nav-pills">
-          <li class="nav-item"><a href="#" class="btn btn-warning">Entrar</a></li>
+          <li class="nav-item"><a href="/login" class="btn btn-warning ms-5">Entrar</a></li>
         </ul>
       </div>
     </div>
     <div class="container">
       <div class="me-md-3 px-3 px-md-5 text-center text-white overflow-hidden">
-        <div class="container py-4 div-black rounded-3">
+
+        <div class="card mb-3 div-black">
+          <h1>{{provider?.name}}</h1>
+          <div class="row g-0">
+            <div class="col-md-4 mb-3">
+              <img src="{{'http://localhost:8080/churrascoprime/providers/image/' + provider?.name}}"
+                class="img-thumbnail" alt="logo provider">
+            </div>
+            <div class="col-md-8">
+              <div class="card-body row">
+                <div class="col-4 lower-div cor-yellow">
+                  <h3>Tempo de espera</h3>
+                  <span class="cor-white">35Min</span>
+                </div>
+                <div class="col-4 lower-div cor-yellow">
+                  <h3>Nivel de estrelas</h3>
+                  <span class="cor-white"><i class="fa fa-star text-warning"
+                      aria-hidden="true"></i>&nbsp;&nbsp;{{provider?.rating}}</span>
+                </div>
+                <div class="col-4 lower-div cor-yellow">
+                  <h3>Situação</h3>
+                  <div>
+                    <div *ngIf="provider?.active; else notShow">
+                      <p class="text-white"><i class="fa fa-circle text-success"
+                          aria-hidden="true"></i>&nbsp;&nbsp;Aberto
+                      </p>
+                    </div>
+                    <ng-template #notShow>
+                      <p class="text-white"><i class="fa fa-circle text-danger"
+                          aria-hidden="true"></i>&nbsp;&nbsp;Fechado
+                      </p>
+                    </ng-template>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Antigo card -->
+        <!-- <div class="container py-4 div-black rounded-3">
           <div class="row">
             <div>
-              <h3>{{provider?.name}}</h3>
+              
+              <h1>{{provider?.name}}</h1>
             </div>
-            <div class="col">
+            <div class="col-3">
               <img src="{{'http://localhost:8080/churrascoprime/providers/image/' + provider?.name}}" class="img-thumbnail" alt="logo provider">
             </div>
-            <div class="col lower-div cor-yellow">
+            <div class="col-3 lower-div cor-yellow">
               <h3>Tempo de espera</h3>
               <span class="cor-white">35Min</span>
             </div>
-            <div class="col lower-div cor-yellow">
+            <div class="col-3 lower-div cor-yellow">
               <h3>Nivel de estrelas</h3>
               <span class="cor-white"><i class="fa fa-star text-warning"
                   aria-hidden="true"></i>&nbsp;&nbsp;{{provider?.rating}}</span>
             </div>
-            <div class="col lower-div cor-yellow">
+            <div class="col-3 lower-div cor-yellow">
               <h3>Situação</h3>
               <div>
                 <div *ngIf="provider?.active; else notShow">
@@ -43,7 +84,7 @@
               </div>
             </div>
           </div>
-        </div>
+        </div> -->
       </div>
     </div>
   </div>
@@ -55,7 +96,7 @@
       <div class="col">
         <div>
           <button *ngFor="let cat of categoriesTypes" type="button" class="btn btn-dark me-3 mb-2"
-          (click)="scroll(cat.name)">
+            (click)="scroll(cat.name)">
             {{cat.name}}
           </button>
         </div>
@@ -69,12 +110,13 @@
       </div>
       <div class="row row-cols-1 row-cols-md-3 g-4">
         <a *ngFor="let product of category.products">
-          <div class="card mb-3 div-black" style="max-width: 440px;">
+          <div class="card mb-3 div-black col" style="max-width: 440px;">
             <div class="row g-0">
-              <div class="col-md-4">
-                <img src="{{'http://localhost:8080/churrascoprime/products/image/' + product?.name}}" alt="" class="img-thumbnail">
+              <div class=" col-md-6">
+                <img src="{{'http://localhost:8080/churrascoprime/products/image/' + product?.name}}" alt=""
+                  class="img-thumbnail">
               </div>
-              <div class="col-md-8">
+              <div class="col-md-6">
                 <div class="card-body">
                   <h5 class="card-title text-white">{{product.name}}</h5>
                   <p class="card-text text-white">{{product.description}}</p>
@@ -92,6 +134,6 @@
 </main>
 
 <a id="fixedbutton" (click)="scrollToTop()" class="scrollToTop"><i class="fa fa-chevron-up fa-2x btn-top"
-  aria-hidden="true"></i></a>
+    aria-hidden="true"></i></a>
 
 <app-footer></app-footer>

@@ -1,16 +1,16 @@
 <app-header></app-header>
 
-<main style="background-color: #f2b727;" class="p-5">
-  <h2 class="m-2 mb-5">Parceiros do Churrasco Prime</h2>
+<main style="background-color: #f2b727;" class="p-5 pt-3 mb-2">
+  <h2 class="pb-2">Parceiros do Churrasco Prime</h2>
   <section class="container">
     <div class="row row-cols-1 row-cols-md-3 g-4">
       <a *ngFor="let provider of providers" (click)="navigateToProviderPage(provider.idProvider)" class="pointer">
         <div class="card mb-3 div-black" style="max-width: 440px; background-color: #000;">
           <div class="row g-0">
-            <div class="col-md-4">
+            <div class="col-md-6">
               <img src="{{'http://localhost:8080/churrascoprime/providers/image/' + provider?.name}}" alt="" class="img-thumbnail">
             </div>
-            <div class="col-md-8">
+            <div class="col-md-6">
               <div class="card-body">
                 <h5 class="card-title text-white">{{provider.name}}</h5>
                 <p class="text-white"><i class="fa fa-star text-warning"
