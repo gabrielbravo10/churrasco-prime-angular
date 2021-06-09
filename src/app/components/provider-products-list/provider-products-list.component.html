@@ -1,6 +1,6 @@
 <header id="background">
   <div class="">
-    <app-small-header></app-small-header>
+    <!-- <app-small-header></app-small-header> -->
     <div class="container">
       <div class="me-md-3 px-3 px-md-5 text-center text-white overflow-hidden">
 
@@ -69,12 +69,17 @@
           <div class="card mb-3 div-black col" style="max-width: 440px;">
             <div class="row g-0">
               <div class=" col-md-6">
-                <img src="{{'http://localhost:8080/churrascoprime/products/image/' + product?.name}}" alt=""
-                  class="img-thumbnail">
+                <a routerLink="/provider-products/{{ providerId }}/{{ product.idProduct }}">
+                  <img src="{{'http://localhost:8080/churrascoprime/products/image/' + product?.name}}" alt=""
+                    class="img-thumbnail">
+                </a>
               </div>
               <div class="col-md-6">
                 <div class="card-body">
-                  <h5 class="card-title text-white">{{product.name}}</h5>
+                 
+                  <a routerLink="/provider-products/{{ providerId }}/{{ product.idProduct }}">
+                    <h5 class="card-title text-white">{{product.name}}</h5>
+                  </a>
                   <p class="card-text text-white">{{product.description}}</p>
                   <p class="card-text text-white text-end">{{product.unitPrice}}</p>
                   <div class="d-grid gap-2 d-md-flex justify-content-md-end">

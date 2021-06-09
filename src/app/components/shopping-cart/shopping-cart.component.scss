@@ -1,0 +1,51 @@
+@import "src/styles/variables";
+
+.main-content {
+  padding-top: 116px;
+  min-height: 100vh;
+}
+
+.section-content {
+  position: relative;
+  margin: 0 auto;
+  z-index: 1;
+}
+
+.section-content-p30 {
+  padding: 0 30px;
+}
+
+.table {
+  margin: 0;
+}
+
+table.table.table-bordered {
+  border: 1px solid #ccc;
+  background: #fff;
+}
+
+.table-bordered td,
+.table-bordered th {
+  border: 1px solid #dee2e6;
+}
+
+table.table.table-bordered th {
+  background: $prime-yellow;
+  color: #000;
+  font-size: 14px;
+  padding: 7px;
+}
+
+.table-responsive {
+  padding-right: 1px;
+}
+
+.items select {
+  width: 100px;
+  height: 40px;
+  border-radius: 40px;
+  padding-left: 15px;
+  margin-bottom: 10px;
+  outline: 0;
+  margin-left: 5px;
+}

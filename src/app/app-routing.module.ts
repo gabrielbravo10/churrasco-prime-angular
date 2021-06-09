@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { AboutUsComponent } from './components/about-us/about-us.component';
 import { LoginComponent } from './components/login/login.component';
+import { ProductDetailsComponent } from './components/product-details/product-details.component';
 import { ProviderProductsListComponent } from './components/provider-products-list/provider-products-list.component';
 import { ProvidersListComponent } from './components/providers-list/providers-list.component';
 import { RegisterComponent } from './components/register/register.component';
@@ -15,6 +16,7 @@ const routes: Routes = [
   { path: 'search/:keyword', component: ProvidersListComponent },
   { path: 'login', component: LoginComponent },
   { path: 'provider-products/:providerId', component: ProviderProductsListComponent },
+  { path: 'provider-products/:providerId/:id', component: ProductDetailsComponent},
   { path: 'about-us', component: AboutUsComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'shopping-cart', component: ShoppingCartComponent },
