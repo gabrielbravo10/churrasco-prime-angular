@@ -87,7 +87,6 @@ export class ProviderProductsListComponent implements OnInit {
   }
 
   onCategoryChange(category: string) {
-    console.log(category);
     if (category === '0') {
       this.listProducts();
     } else {
@@ -96,7 +95,6 @@ export class ProviderProductsListComponent implements OnInit {
   }
 
   onSearchChange(keyword: string) {
-    console.log(keyword);
     this.listProducts('', keyword);
   }
 
@@ -126,13 +124,11 @@ export class ProviderProductsListComponent implements OnInit {
   }
 
   addToCart(theProduct: IProduct) {
-    console.log(`Adding to cart: ${theProduct.name}, ${theProduct.description}`);
     const theCartItem = new ICartItem(theProduct);
     this.cartService.addToCart(theCartItem);
   }
 
   scroll(id: any) {
-    console.log(id);
     document.getElementById(id).scrollIntoView();
   }
 

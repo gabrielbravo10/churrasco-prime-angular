@@ -1,23 +1,19 @@
-<header id="background">
-    <div class="">
-      <!-- <app-small-header></app-small-header> -->
-    </div>
-  </header>
-
-<div class="detail-section">
+<div class="detail-section pt-5 pb-5">
     <div class="container-fluid">
 
         <img src="{{'http://localhost:8080/churrascoprime/products/image/' + product?.name}}" alt=""
-        class="img-thumbnail">
+        class="img-thumbnail" style="height: 200px; width: 200px;">
 
         <h3>{{ product.name }}</h3>
         <div class="price">{{ product.unitPrice | currency:'USD' }}</div>
-        <button (click)="addToCart()" class="btn btn-primary btn-sm">Add to cart</button>
+        <button (click)="addToCart()" class="btn btn-dark btn-sm">Add to cart</button>
 
         <hr>
         <h4>Description</h4>
         <p>{{ product.description }}</p>
 
-        <a routerLink="/provider-products/{{theProviderId}}" class="mt-5">Back to Product List</a>
+        <a routerLink="/provider-products/{{theProviderId}}" class="mt-5 back">Back to Product List</a>
     </div>
 </div>
+
+<app-footer></app-footer>

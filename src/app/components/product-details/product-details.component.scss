@@ -1,0 +1,13 @@
+@import "src/styles/variables";
+
+.detail-section {
+    background-color: $prime-yellow;
+}
+
+.back {
+    color: black;
+}
+
+.back:hover {
+    color: white;
+}

@@ -1,0 +1,57 @@
+@import "src/styles/variables";
+@import "src/styles/utilities";
+
+.main-content.page-m {
+  padding: 10% 15% 10% 15%;
+  background-color: $prime-yellow;
+}
+
+.section-content{
+  position:relative;
+  margin:0 auto;
+}
+
+.section-content-p30{
+  padding:0 30px
+}
+
+.form-area{
+  background:$prime-yellow;
+  position:relative;
+  margin-bottom:45px;
+  padding:50px 20px;
+  border:3px solid black;
+}
+.form-area h3{
+  position:absolute;
+  top:-26px;
+  left:13px;
+  background:$prime-yellow;
+  padding:10px 20px;
+  font-weight:500;
+  display:inline-block
+}
+.input-space{
+  margin-bottom:20px
+}
+.input-space label{
+  padding-left:31px;
+  font-size:14px;
+  margin-bottom:50px
+}
+.input-space input[type=text]{
+  width:100%;
+  height:40px;
+  border-radius:30px;
+  outline:0;
+  padding:10px;
+  border:1px solid black;
+}
+.input-space select{
+  width:100%;
+  height:40px;
+  border-radius:30px;
+  outline:0;
+  padding:0 10px;
+  border:1px solid black
+}
