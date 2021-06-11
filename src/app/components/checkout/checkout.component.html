@@ -6,21 +6,21 @@
   
           <!-- customer form group-->
           <div formGroupName="customer" class="form-area">
-            <h3>Customer</h3>
-  
+            <h3>Cliente</h3>
+
             <div class="row">
-              <div class="col-md-2"><label>First Name</label></div>
+              <div class="col-md-2"><label>CPF</label></div>
               <div class="col-md-9">
                 <div class="input-space">
-                  <input formControlName="firstName" type="text">
+                  <input formControlName="cpf" type="text">
   
-                  <div *ngIf="firstName.invalid && (firstName.dirty || firstName.touched)"
+                  <div *ngIf="cpf.invalid && (cpf.dirty || cpf.touched)"
                     class="alert alert-danger mt-1">
-                    <div *ngIf="firstName.errors.required || firstName.errors.notOnlyWhitespace">
-                      First Name is required
+                    <div *ngIf="cpf.errors.required || cpf.errors.notOnlyWhitespace">
+                      CPF é obrigatorio
                     </div>
-                    <div *ngIf="firstName.errors.minlength">
-                      First Name must be at least 2 characters long
+                    <div *ngIf="cpf.errors.minlength || cpf.errors.maxlength">
+                      CPF tem que ser valido e 11 digitos
                     </div>
                   </div>
   
@@ -29,17 +29,37 @@
             </div>
   
             <div class="row">
-              <div class="col-md-2"><label>Last Name</label></div>
+              <div class="col-md-2"><label>Primerio Nome</label></div>
+              <div class="col-md-9">
+                <div class="input-space">
+                  <input formControlName="firstName" type="text">
+  
+                  <div *ngIf="firstName.invalid && (firstName.dirty || firstName.touched)"
+                    class="alert alert-danger mt-1">
+                    <div *ngIf="firstName.errors.required || firstName.errors.notOnlyWhitespace">
+                      Primeiro Nome é obrigatorio
+                    </div>
+                    <div *ngIf="firstName.errors.minlength">
+                      Primeiro Nome tem que ter no minimo 2 caracteres
+                    </div>
+                  </div>
+  
+                </div>
+              </div>
+            </div>
+  
+            <div class="row">
+              <div class="col-md-2"><label>Ultimo Name</label></div>
               <div class="col-md-9">
                 <div class="input-space">
                   <input formControlName="lastName" type="text">
   
                   <div *ngIf="lastName.invalid && (lastName.dirty || lastName.touched)" class="alert alert-danger mt-1">
                     <div *ngIf="lastName.errors.required || lastName.errors.notOnlyWhitespace">
-                      Last Name is required
+                      Ultimo Nome é obrigatorio
                     </div>
                     <div *ngIf="lastName.errors.minlength">
-                      Last Name must be at least 2 characters long
+                      Ultimo nome tem que ter no minimo 2 caracteres
                     </div>
                   </div>
   
@@ -55,10 +75,29 @@
   
                   <div *ngIf="email.invalid && (email.dirty || email.touched)" class="alert alert-danger mt-1">
                     <div *ngIf="email.errors.required">
-                      Email is required
+                      Email é obrigatorio
                     </div>
                     <div *ngIf="email.errors.pattern">
-                      Email must be a valid email address format
+                      Email tem que ser um formato valido
+                    </div>
+                  </div>
+  
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-md-2"><label>Senha</label></div>
+              <div class="col-md-9">
+                <div class="input-space">
+                  <input formControlName="password" type="password">
+  
+                  <div *ngIf="password.invalid && (password.dirty || password.touched)" class="alert alert-danger mt-1">
+                    <div *ngIf="password.errors.required || password.errors.notOnlyWhitespace">
+                      Senha é obrigatorio
+                    </div>
+                    <div *ngIf="password.errors.minlength">
+                      Senha tem que ter no minimo 6 caracteres
                     </div>
                   </div>
   
@@ -71,10 +110,10 @@
           <!-- Shipping Address -->
   
           <div formGroupName="address" class="form-area">
-            <h3>Shipping Address</h3>
+            <h3>Endereço de Entrega</h3>
   
             <div class="row">
-              <div class="col-md-2"><label>Street</label></div>
+              <div class="col-md-2"><label>Rua</label></div>
               <div class="col-md-9">
                 <div class="input-space">
                   <input formControlName="street" type="text">
@@ -83,10 +122,10 @@
                     *ngIf="addressStreet.invalid && (addressStreet.dirty || addressStreet.touched)"
                     class="alert alert-danger mt-1">
                     <div *ngIf="addressStreet.errors.required || addressStreet.errors.notOnlyWhitespace">
-                      Street is required
+                      Rua é obrigatorio
                     </div>
                     <div *ngIf="addressStreet.errors.minlength">
-                      Street must be at least 2 characters long
+                      Rua tem que ter no minimo 2 caracteres
                     </div>
                   </div>
   
@@ -95,28 +134,25 @@
             </div>
   
             <div class="row">
-              <div class="col-md-2"><label>City</label></div>
+              <div class="col-md-2"><label>Cidade</label></div>
               <div class="col-md-9">
                 <div class="input-space">
-                  <input formControlName="city" type="text">
-  
-                  <div *ngIf="addressCity.invalid && (addressCity.dirty || addressCity.touched)"
-                    class="alert alert-danger mt-1">
-                    <div *ngIf="addressCity.errors.required || addressCity.errors.notOnlyWhitespace">
-                      City is required
-                    </div>
-                    <div *ngIf="addressCity.errors.minlength">
-                      City must be at least 2 characters long
-                    </div>
-                  </div>
-  
+                  <!-- <input formControlName="city" type="text"> -->
+                  <select formControlName="city" type="text">
+                    <option></option>
+                    <option *ngFor="let city of cities">
+                     {{ city.idCity }}. {{ city.name }}
+                    </option>
+                  </select>
                 </div>
               </div>
             </div>
 
+           
+
 
             <div class="row">
-              <div class="col-md-2"><label>Zip Code</label></div>
+              <div class="col-md-2"><label>CEP</label></div>
               <div class="col-md-9">
                 <div class="input-space">
                   <input formControlName="zipCode" type="text">
@@ -126,10 +162,10 @@
                     class="alert alert-danger mt-1">
                     <div
                       *ngIf="addressZipCode.errors.required || addressZipCode.errors.notOnlyWhitespace">
-                      Zip code is required
+                      CEP é obrigatorio
                     </div>
                     <div *ngIf="addressZipCode.errors.minlength">
-                      Zip code must be at least 2 characters long
+                      CEP tem que ter no minimo 2 caracteres
                     </div>
                   </div>
   
@@ -141,17 +177,17 @@
   
           <!-- Order Details-->
           <div class="form-area">
-            <h3>Review Your Order</h3>
+            <h3>Seu Pedido</h3>
   
-            <p>Total Quantity: {{ totalQuantity }}</p>
-            <P>Shipping: R$10.00</P>
-            <p>Total Price: {{ totalPrice + 10 | currency: 'USD' }}</p>
+            <p>Quantidade Total: {{ totalQuantity }}</p>
+            <P>Taxa de Entrega: R$10.00</P>
+            <p>Preço Total: {{ totalPrice + 10 | currency: 'USD' }}</p>
           </div>
   
   
           <!-- submit button -->
           <div class="text-center">
-            <button type="submit" class="btn btn-dark">Purchase</button>
+            <button type="submit" class="btn btn-dark">Comprar</button>
           </div>
   
   

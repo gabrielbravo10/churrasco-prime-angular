@@ -1,5 +1,5 @@
 export class IAddress {
     street: string;
-    city: string;
+    city: number;
     zipCode: string;
 }
