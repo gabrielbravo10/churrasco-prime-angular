@@ -68,6 +68,14 @@ export class CheckoutComponent implements OnInit {
           Validators.required,
           Validators.minLength(2),
         ]),
+        streetNumber: new FormControl('', [
+          Validators.required,
+          Validators.minLength(1),
+        ]),
+        neighborhood: new FormControl('', [
+          Validators.required,
+          Validators.minLength(2),
+        ]),
         city: new FormControl('', [
           Validators.required,
           Validators.minLength(2),
@@ -76,6 +84,7 @@ export class CheckoutComponent implements OnInit {
           Validators.required,
           Validators.minLength(2),
         ]),
+        complement: new FormControl(''),
       }),
     });
   }
@@ -109,11 +118,20 @@ export class CheckoutComponent implements OnInit {
   get addressStreet() {
     return this.checkoutFormGroup.get('address.street');
   }
+  get addressStreetNumber() {
+    return this.checkoutFormGroup.get('address.streetNumber');
+  }
+  get addressNeighborhood() {
+    return this.checkoutFormGroup.get('address.neighborhood');
+  }
   get addressCity() {
     return this.checkoutFormGroup.get('address.city');
   }
   get addressZipCode() {
     return this.checkoutFormGroup.get('address.zipCode');
+  }
+  get addressComplement() {
+    return this.checkoutFormGroup.get('address.complement');
   }
 
   onSubmit() {

@@ -132,6 +132,45 @@
                 </div>
               </div>
             </div>
+
+            <div class="row">
+              <div class="col-md-2"><label>Numero</label></div>
+              <div class="col-md-9">
+                <div class="input-space">
+                  <input formControlName="streetNumber" type="number">
+  
+                  <div
+                    *ngIf="addressStreetNumber.invalid && (addressStreetNumber.dirty || addressStreetNumber.touched)"
+                    class="alert alert-danger mt-1">
+                    <div *ngIf="addressStreetNumber.errors.required || addressStreetNumber.errors.notOnlyWhitespace">
+                      Numero é obrigatorio
+                    </div>
+                  </div>
+  
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-md-2"><label>Bairro</label></div>
+              <div class="col-md-9">
+                <div class="input-space">
+                  <input formControlName="neighborhood" type="text">
+  
+                  <div
+                    *ngIf="addressNeighborhood.invalid && (addressNeighborhood.dirty || addressNeighborhood.touched)"
+                    class="alert alert-danger mt-1">
+                    <div *ngIf="addressNeighborhood.errors.required || addressNeighborhood.errors.notOnlyWhitespace">
+                      Bairro é obrigatorio
+                    </div>
+                    <div *ngIf="addressNeighborhood.errors.minlength">
+                      Bairro tem que ter no minimo 2 caracteres
+                    </div>
+                  </div>
+  
+                </div>
+              </div>
+            </div>
   
             <div class="row">
               <div class="col-md-2"><label>Cidade</label></div>
@@ -147,9 +186,6 @@
                 </div>
               </div>
             </div>
-
-           
-
 
             <div class="row">
               <div class="col-md-2"><label>CEP</label></div>
@@ -169,6 +205,15 @@
                     </div>
                   </div>
   
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-md-2"><label>Complemento</label></div>
+              <div class="col-md-9">
+                <div class="input-space">
+                  <input formControlName="complement" type="text">  
                 </div>
               </div>
             </div>
