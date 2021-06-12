@@ -19,6 +19,7 @@ import {
 }  from '@okta/okta-angular';
 
 import { OktaLoginComponent } from './components/okta-login/okta-login.component';
+import { OrderHistoryComponent } from './components/order-history/order-history.component';
 
 
 const routes: Routes = [
@@ -30,6 +31,7 @@ const routes: Routes = [
   { path: 'login/callback', component: OktaCallbackComponent },
   { path: 'login', component: OktaLoginComponent },
   { path: 'members', component: MembersPageComponent, canActivate: [ OktaAuthGuard ] },
+  { path: 'order-history', component: OrderHistoryComponent, canActivate: [ OktaAuthGuard ] },
   { path: 'provider-products/:providerId', component: ProviderProductsListComponent },
   { path: 'provider-products/:providerId/:id', component: ProductDetailsComponent},
   { path: 'about-us', component: AboutUsComponent },

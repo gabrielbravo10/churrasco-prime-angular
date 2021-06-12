@@ -27,6 +27,7 @@ import { LoginStatusComponent } from './components/login-status/login-status.com
 import myAppConfig from './config/my-app-config';
 import { Router } from '@angular/router';
 import { MembersPageComponent } from './components/members-page/members-page.component';
+import { OrderHistoryComponent } from './components/order-history/order-history.component';
 
 
 const oktaConfig = Object.assign({
@@ -56,7 +57,8 @@ const oktaConfig = Object.assign({
     CheckoutComponent,
     OktaLoginComponent,
     LoginStatusComponent,
-    MembersPageComponent
+    MembersPageComponent,
+    OrderHistoryComponent
   ],
   imports: [
     BrowserModule,
