@@ -19,6 +19,23 @@ import { CartStatusComponent } from './components/cart-status/cart-status.compon
 import { SmallHeaderComponent } from './components/small-header/small-header.component';
 import { ProductDetailsComponent } from './components/product-details/product-details.component';
 import { CheckoutComponent } from './components/checkout/checkout.component';
+import { OktaLoginComponent } from './components/okta-login/okta-login.component';
+import { OktaAuthModule, OKTA_CONFIG } from '@okta/okta-angular';
+import { ProductService } from './shared/services/product.service';
+import { LoginStatusComponent } from './components/login-status/login-status.component';
+
+import myAppConfig from './config/my-app-config';
+import { Router } from '@angular/router';
+import { MembersPageComponent } from './components/members-page/members-page.component';
+
+
+const oktaConfig = Object.assign({
+  onAuthRequired: (oktaAuth, injector) => {
+    const router = injector.get(Router);
+
+    router.navigate(['/okta-login'])
+  }
+}, myAppConfig.oidc);
 
 @NgModule({
   declarations: [
@@ -37,15 +54,19 @@ import { CheckoutComponent } from './components/checkout/checkout.component';
     SmallHeaderComponent,
     ProductDetailsComponent,
     CheckoutComponent,
+    OktaLoginComponent,
+    LoginStatusComponent,
+    MembersPageComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    OktaAuthModule
   ],
-  providers: [],
+  providers: [ { provide: OKTA_CONFIG, useValue: oktaConfig } ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

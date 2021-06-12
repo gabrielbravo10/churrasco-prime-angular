@@ -1,6 +1,6 @@
 export class IAddress {
     street: string;
-    number: number;
+    number: string;
     neighborhood: string;
     city: number;
     zipCode: string;
