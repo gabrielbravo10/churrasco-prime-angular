@@ -26,16 +26,15 @@
                 <div class="card-body">
                     <h3>{{ product.name }}</h3>
                     <div class="price">
-                        <p class="fs-2"> {{ product.unitPrice | currency:'USD' }}</p>
+                        <p class="fs-2"> {{ product.unitPrice | currency:'BRL' }}</p>
                     </div>
                     <div>
-                        <h4 class="fs-2">Description</h4>
+                        <h4 class="fs-2">Descrição</h4>
                         <p class="fs-2">{{ product.description }}</p>
                     </div>
                     <div>
-                        <a routerLink="/provider-products/{{theProviderId}}" class="btn btn-dark btn-sm">Back to Product
-                            List</a>
-                        <button (click)="addToCart()" class="btn btn-dark btn-sm ms-2">Add to cart</button>
+                        <a routerLink="/provider-products/{{theProviderId}}" class="btn btn-dark btn-sm">Voltar</a>
+                        <button (click)="addToCart()" class="btn btn-dark btn-sm ms-2">Adicionar</button>
                     </div>
                 </div>
             </div>

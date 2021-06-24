@@ -1,29 +1,37 @@
-<div class="main-content" style="color: #fff">
+<div class="main-content m-5" style="color: #fff">
     <div class="section-content section-content-p30">
         <div class="container-fluid">
-            <h3>Your Orders</h3>
+            <h3>Seus Pedidos</h3>
 
-            <div *ngIf="orderHistoryList.length > 0">
-                <table class="table table-bordered">
+            <div *ngIf="orderHistoryList.length> 0" class="">
+                <table class="table table-bordered" style="color: #fff">
                     <tr>
-                        <th width="20%">Order Tracking Number</th>
-                        <th width="10%">Total Price</th>
-                        <th width="10%">Total Quantity</th>
-                        <th width="10%">Date</th>
+                        <th width="20%">Numero de rastreio do pedido</th>
+                        <th width="10%">Preço Total</th>
+                        <th width="10%">Quantidade Total</th>
+                        <th width="10%">Data</th>
                     </tr>
 
                     <tr *ngFor="let tempOrderHistory of orderHistoryList">
                         <td>
-                            {{ tempOrderHistory.orderTrackingNumber }}
+                            <p>
+                                {{ tempOrderHistory.orderTrackingNumber }}
+                            </p>
                         </td>
                         <td>
-                            {{ tempOrderHistory.totalPrice | currency: 'USD' }}
+                            <p>
+                                {{ tempOrderHistory.totalPrice | currency: 'BRL' }}
+                            </p>
                         </td>
                         <td>
-                            {{ tempOrderHistory.totalQuantity }}
+                            <p>
+                                {{ tempOrderHistory.totalQuantity }}
+                            </p>
                         </td>
                         <td>
-                            {{ tempOrderHistory.dateCreated | date: 'medium' }}
+                            <p>
+                                {{ tempOrderHistory.dateCreated | date : format : timezone : locale }}
+                            </p>
                         </td>
                     </tr>
                 </table>
