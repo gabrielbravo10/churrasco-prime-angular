@@ -4,7 +4,7 @@
       <div *ngIf="cartItems.length > 0">
 
         <!-- Novo card -->
-        <!-- <div class="container" style="color: #fff; background-color: #f2b727;">
+        <div class="container" style="color: #fff; background-color: #f2b727;">
           <div class="row">
             <div class="col border border-dark">
               <h3>Imagem do Produto</h3>
@@ -68,12 +68,12 @@
           <p class="fs-3">Taxa de Entrega: R$ 10.00</p>
           <p class="fs-3">Preço Total: {{ totalPrice + 10 | currency: 'BRL' }}</p>
           <a routerLink="/checkout" class="btn btn-outline-dark">Checkout</a>
-        </div> -->
+        </div>
 
 
 
         <!-- Velha Tabela -->
-        <table class="table table-bordered">
+        <!-- <table class="table table-bordered">
           <tr>
             <th width="50%">Imagem do Produto</th>
             <th width="25%">Detalhes do Produto</th>
@@ -128,7 +128,7 @@
                     <a routerLink="/checkout" class="btn btn-outline-dark mb-1 ms-2">Checkout</a>
                 </td>
           </tr>
-        </table>
+        </table> -->
       </div>
 
       <div *ngIf="cartItems.length == 0" class="alert alert-warning col-md-12" role="alert">
