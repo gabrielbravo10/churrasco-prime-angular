@@ -4,7 +4,7 @@
       <div *ngIf="cartItems.length > 0">
 
         <!-- Novo card -->
-        <div class="container" style="color: #fff; background-color: #f2b727;">
+        <!-- <div class="container" style="color: #fff; background-color: #f2b727;">
           <div class="row">
             <div class="col border border-dark">
               <h3>Imagem do Produto</h3>
@@ -68,20 +68,21 @@
           <p class="fs-3">Taxa de Entrega: R$ 10.00</p>
           <p class="fs-3">Preço Total: {{ totalPrice + 10 | currency: 'BRL' }}</p>
           <a routerLink="/checkout" class="btn btn-outline-dark">Checkout</a>
-        </div>
+        </div> -->
 
 
 
         <!-- Velha Tabela -->
-        <!-- <table class="table table-bordered">
+        <table class="table table-bordered">
           <tr>
-            <th width="50%">Imagem do Produto</th>
-            <th width="25%">Detalhes do Produto</th>
-            <th width="25%">Quantitativo</th>
+            <th>Imagem do Produto</th>
+            <th>Detalhes do Produto</th>
+            <th>Quantitativo</th>
           </tr>
           <tr *ngFor="let tempCartItem of cartItems">
             <td>
-              <img src="{{'http://localhost:8080/churrascoprime/products/image/' + tempCartItem?.name}}" class="img-responsive" width="150px" />
+              <img src="{{'http://localhost:8080/churrascoprime/products/image/' + tempCartItem?.name}}"
+                class="img-responsive" width="150px" />
             </td>
             <td>
               <p>{{ tempCartItem.name }}</p>
@@ -89,50 +90,41 @@
             </td>
             <td>
               <div class="items">
-                <label>Quantidade</label> 
-
+                <label>Quantidade</label>
                 <div class="row no-gutters">
                   <div class="col">
                     <button (click)="incrementQuantity(tempCartItem)" class="btn btn-outline-dark btn-sm">
                       <i class="fa fa-plus" aria-hidden="true"></i>
-                      
                     </button>
                   </div>
-
                   <div class="col ml-4 mr-2">
                     {{ tempCartItem.quantity }}
                   </div>
-
                   <div class="col">
                     <button (click)="decrementQuantity(tempCartItem)" class="btn btn-outline-dark btn-sm">
                       <i class="fa fa-minus" aria-hidden="true"></i>
                     </button>
                   </div>
-
                   <div class="col-8"></div>
                 </div>
               </div>
-
               <button (click)="remove(tempCartItem)" class="btn btn-outline-dark btn-sm mt-2 ms-2">Remove</button>
-
               <p class="mt-2">Subtotal: {{ tempCartItem.quantity * tempCartItem.unitPrice | currency: 'BRL' }} </p>
             </td>
           </tr>
-
           <tr>
-                <td colspan="2"></td>
-                <td style="font-weight: bold;">
-                    <p>Quantidade Total: {{ totalQuantity }}</p>
-                    <p>Taxa de Entrega: R$ 10.00</p>
-                    <p>Preço Total: {{ totalPrice + 10 | currency: 'BRL' }}</p>
-                    <a routerLink="/checkout" class="btn btn-outline-dark mb-1 ms-2">Checkout</a>
-                </td>
+            <td colspan="2"></td>
+            <td style="font-weight: bold;">
+              <p>Quantidade Total: {{ totalQuantity }}</p>
+              <p>Taxa de Entrega: R$ 10.00</p>
+              <p>Preço Total: {{ totalPrice + 10 | currency: 'BRL' }}</p>
+              <a routerLink="/checkout" class="btn btn-outline-dark mb-1 ms-2">Checkout</a>
+            </td>
           </tr>
-        </table> -->
+        </table>
       </div>
-
       <div *ngIf="cartItems.length == 0" class="alert alert-warning col-md-12" role="alert">
-        Seu carrinho de compra esta vazio.
+        <p class="fs-1"> carrinho de compra esta vazio.</p>
       </div>
     </div>
   </div>
