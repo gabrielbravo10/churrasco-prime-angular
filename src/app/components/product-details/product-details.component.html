@@ -1,8 +1,8 @@
-<div class="detail-section pt-5 pb-5">
+<!-- <div class="detail-section pt-5 pb-5">
     <div class="container-fluid">
 
         <img src="{{'http://localhost:8080/churrascoprime/products/image/' + product?.name}}" alt=""
-        class="img-thumbnail" style="height: 200px; width: 200px;">
+            class="img-thumbnail" style="height: 200px; width: 200px;">
 
         <h3>{{ product.name }}</h3>
         <div class="price">{{ product.unitPrice | currency:'USD' }}</div>
@@ -14,6 +14,37 @@
 
         <a routerLink="/provider-products/{{theProviderId}}" class="mt-5 back">Back to Product List</a>
     </div>
-</div>
+</div> -->
+<section>
+    <div class="card text-center container pt-3 pb-3" style="background-color: #f2b727;">
+        <div class="row g-0">
+            <div class="col-md-6">
+                <img src="{{'http://localhost:8080/churrascoprime/products/image/' + product?.name}}"
+                    alt="Imagem do produto" class="img-thumbnail">
+            </div>
+            <div class="col-md-6">
+                <div class="card-body">
+                    <h3>{{ product.name }}</h3>
+                    <div class="price">
+                        <p class="fs-2"> {{ product.unitPrice | currency:'USD' }}</p>
+                    </div>
+                    <div>
+                        <h4 class="fs-2">Description</h4>
+                        <p class="fs-2">{{ product.description }}</p>
+                    </div>
+                    <div>
+                        <a routerLink="/provider-products/{{theProviderId}}" class="btn btn-dark btn-sm">Back to Product
+                            List</a>
+                        <button (click)="addToCart()" class="btn btn-dark btn-sm ms-2">Add to cart</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- style="height: 200px; width: 200px;" -->
+
+
 
 <app-footer></app-footer>
