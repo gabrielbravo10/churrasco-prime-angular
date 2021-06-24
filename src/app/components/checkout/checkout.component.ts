@@ -14,6 +14,7 @@ import { IPurchase } from 'src/app/shared/interfaces/IPurchase';
 import { CartService } from 'src/app/shared/services/cart.service';
 import { CheckoutService } from 'src/app/shared/services/checkout.service';
 import { CityService } from 'src/app/shared/services/city.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-checkout',
@@ -180,14 +181,19 @@ export class CheckoutComponent implements OnInit {
 
     this.checkoutService.placeOrder(purchase).subscribe({
       next: (response) => {
-        alert(
-          `Seu pedido foi recebido com sucesso!\nNumero de rastrear do pedido: ${response.orderTrackingNumber}`
-        );
+        // Swal.fire('Seu pedido foi recebido com sucesso!', `Numero de rastrear do pedido: ${response.orderTrackingNumber} - \nPedido chegara em torno de 35 minutos.. caso preciso 
+        // entregador ligara no telefone cadastrado..`, 'success');
+        Swal.fire({
+          icon: 'success',
+          title: 'Seu pedido foi recebido com sucesso!',
+          text: 'Pedido chegara em torno de 35 minutos.. caso preciso entregador ligara no telefone cadastrado..',
+          footer: `Codigo para reastreamento do pedido: ${response.orderTrackingNumber}`
+        })
         // reset cart
         this.resetCart();
       },
       error: (err) => {
-        alert(`Erro: ${err.message}`);
+        Swal.fire('Oops!', 'Occoreu algum erro!', 'error');
       },
     });
   }
