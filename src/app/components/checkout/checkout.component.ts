@@ -59,6 +59,11 @@ export class CheckoutComponent implements OnInit {
           Validators.required,
           Validators.minLength(2),
         ]),
+        telefone: new FormControl('', [
+          Validators.required,
+          Validators.minLength(9),
+          Validators.maxLength(11)
+        ]),
         email: new FormControl(theEmail, [
           Validators.required,
           Validators.pattern('^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$'),
@@ -112,6 +117,9 @@ export class CheckoutComponent implements OnInit {
   }
   get lastName() {
     return this.checkoutFormGroup.get('customer.lastName');
+  }
+  get telefone() {
+    return this.checkoutFormGroup.get('customer.telefone');
   }
   get email() {
     return this.checkoutFormGroup.get('customer.email');

@@ -66,6 +66,26 @@
                 </div>
               </div>
             </div>
+
+            <div class="row">
+              <div class="col-md-2"><label>Telefone</label></div>
+              <div class="col-md-9">
+                <div class="input-space">
+                  <input formControlName="telefone" type="text">
+  
+                  <div *ngIf="telefone.invalid && (telefone.dirty || telefone.touched)"
+                    class="alert alert-danger mt-1">
+                    <div *ngIf="telefone.errors.required || cpf.errors.notOnlyWhitespace">
+                      Telefone é obrigatorio
+                    </div>
+                    <div *ngIf="telefone.errors.minlength || telefone.errors.maxlength">
+                      Telefone tem que ter entre 9 a 11 digitos
+                    </div>
+                  </div>
+  
+                </div>
+              </div>
+            </div>
   
             <div class="row">
               <div class="col-md-2"><label>Email</label></div>

@@ -52,17 +52,17 @@
       <div class="col">
         <div>
           <button *ngFor="let cat of categoriesTypes" type="button" class="btn btn-dark me-3 mb-2"
-            (click)="scroll(cat.name)">
-            {{cat.name}}
+            (click)="scroll(cat?.name)">
+            {{cat?.name}}
           </button>
         </div>
       </div>
     </div>
   </div>
   <section class="container">
-    <div *ngFor="let category of categories" class="simple-border-2" id="{{category.name}}">
+    <div *ngFor="let category of categories" class="simple-border-2" id="{{category?.name}}">
       <div class="pt-3">
-        <h2>{{category.name}}</h2>
+        <h2>{{category?.name}}</h2>
       </div>
       <div class="row row-cols-1 row-cols-md-3 g-4">
         <a *ngFor="let product of category.products">
@@ -78,10 +78,10 @@
                 <div class="card-body">
                  
                   <a routerLink="/provider-products/{{ providerId }}/{{ product.idProduct }}">
-                    <h5 class="card-title text-white">{{product.name}}</h5>
+                    <h5 class="card-title text-white">{{product?.name}}</h5>
                   </a>
                   <p class="card-text text-white">{{product.description}}</p>
-                  <p class="card-text text-white text-end">{{product.unitPrice}}</p>
+                  <p class="card-text text-white text-end">{{product.unitPrice | currency: 'BRL'}}</p>
                   <div class="d-grid gap-2 d-md-flex justify-content-md-end">
                     <button (click)="addToCart(product)" type="button" class="btn btn-light">Adicionar</button>
                   </div>
