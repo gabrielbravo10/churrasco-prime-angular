@@ -2,77 +2,6 @@
   <div class="section-content section-content-p30">
     <div class="container-fluid">
       <div *ngIf="cartItems.length > 0">
-
-        <!-- Novo card -->
-        <!-- <div class="container" style="color: #fff; background-color: #f2b727;">
-          <div class="row">
-            <div class="col border border-dark">
-              <h3>Imagem do Produto</h3>
-            </div>
-            <div class="col border border-dark">
-              <h3>Detalhes do Produto</h3>
-            </div>
-            <div class="col border border-dark">
-              <h3>Quantitativo</h3>
-            </div>
-          </div>
-        </div>
-
-        <div class="container">
-          <div class="row" *ngFor="let tempCartItem of cartItems" style="background-color: #fff;">
-            <div class="col border border-dark">
-              <div>
-                <img src="{{'http://localhost:8080/churrascoprime/products/image/' + tempCartItem?.name}}"
-                  class="img-responsive container p-1" width="100%" />
-              </div>
-            </div>
-            <div class="col border border-dark">
-              <div class="row">
-                <p class="fs-3">{{ tempCartItem.name }}</p>
-                <p class="fs-3">{{ tempCartItem.unitPrice | currency: "BRL" }}</p>
-              </div>
-            </div>
-            <div class="col border border-dark">
-              <div class="items">
-                <label>
-                  <h3>Quantidade</h3>
-                </label>
-
-                <div class="row no-gutters container">
-                  <div class="col">
-                    <div class="col-8">
-                      <button (click)="incrementQuantity(tempCartItem)" class="btn btn-outline-dark btn-sm">
-                        <i class="fa fa-plus" aria-hidden="true"></i>
-                      </button>
-                      <span class="fs-3">
-                        {{ tempCartItem.quantity }}
-                      </span>
-                      <button (click)="decrementQuantity(tempCartItem)" class="btn btn-outline-dark btn-sm">
-                        <i class="fa fa-minus" aria-hidden="true"></i>
-                      </button>
-                    </div>
-                    <div class="col-4 mt-3">
-                      <button (click)="remove(tempCartItem)" class="btn btn-outline-dark btn-sm">Remove</button>
-                      <p class="mt-2">Subtotal: {{ tempCartItem.quantity * tempCartItem.unitPrice | currency: 'BRL' }}
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="container p-2 border border-dark" style="background-color: #fff;">
-          <p class="fs-3">Quantidade Total: {{ totalQuantity }}</p>
-          <p class="fs-3">Taxa de Entrega: R$ 10.00</p>
-          <p class="fs-3">Preço Total: {{ totalPrice + 10 | currency: 'BRL' }}</p>
-          <a routerLink="/checkout" class="btn btn-outline-dark">Checkout</a>
-        </div> -->
-
-
-
-        <!-- Velha Tabela -->
         <table class="table table-bordered">
           <tr>
             <th>Imagem do Produto</th>
@@ -93,18 +22,18 @@
                 <label>Quantidade</label>
                 <div class="row no-gutters">
                   <div class="col">
-                    <button (click)="incrementQuantity(tempCartItem)" class="btn btn-outline-dark btn-sm">
-                      <i class="fa fa-plus" aria-hidden="true"></i>
+                    <button (click)="decrementQuantity(tempCartItem)" class="btn btn-outline-dark btn-sm">
+                      <i class="fa fa-minus" aria-hidden="true"></i>
                     </button>
                   </div>
                   <div class="col ml-4 mr-2">
                     {{ tempCartItem.quantity }}
                   </div>
                   <div class="col">
-                    <button (click)="decrementQuantity(tempCartItem)" class="btn btn-outline-dark btn-sm">
-                      <i class="fa fa-minus" aria-hidden="true"></i>
+                    <button (click)="incrementQuantity(tempCartItem)" class="btn btn-outline-dark btn-sm">
+                      <i class="fa fa-plus" aria-hidden="true"></i>
                     </button>
-                  </div>
+                  </div>                  
                   <div class="col-8"></div>
                 </div>
               </div>
